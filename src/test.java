@@ -2,7 +2,7 @@ public class test {
 
     public static void main (String[] args){
 
-        HashTest.HashTestFunc();
+        //HashTest.HashTestFunc();
 
 
         System.out.println("");

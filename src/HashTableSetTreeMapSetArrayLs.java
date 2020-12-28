@@ -3,9 +3,40 @@ import java.lang.Object;
 import java.lang.Number;
 import java.lang.Integer;
 
-//https://dotblogs.com.tw/kent2480/2014/01/10/139465
 
 public class HashTableSetTreeMapSetArrayLs {
+
+
+    //https://dotblogs.com.tw/kent2480/2014/01/10/139465
+
+    //摘要:JAVA 集合(4) Map
+    //
+    //Map集合
+    //該集合存儲鍵值對，而且要保證鍵的唯一性
+    //增加
+    // put(K key, V value)
+    //putAll(Map<? extneds K, ?extends V> m)
+    //刪除
+    //clear()
+    //remove(Object key)
+    //判斷
+    //containsKey(Object key)
+    //containsVaule(Object value)
+    //isEmpty()
+    //獲取
+    //value get(Object key)
+    //size()
+    //values()
+    //entrySet()
+    //keySet()
+
+    //Map子類
+
+    //Hashtable: 底層是雜湊表數據結構，不可存入null鍵null值，該集合是線程同步
+    //HashMap: 底層是雜湊表數據結構，允許存入null鍵null值，該集合是不同步
+    //TreeMap: 底層是二元樹數據結構，線程不同步，可以用於map集合中的鍵進行排序
+    //Map和Set很像，Set底層就是使用Map集合
+    
     public void Test1()
     {
         HashMap<String, String> map = new HashMap<String, String>();
@@ -25,6 +56,7 @@ public class HashTableSetTreeMapSetArrayLs {
         // [null, a, b]
         System.out.println(col);
     }
+
     public void Test2()
     {
         HashMap<String, String> map = new HashMap<String, String>();

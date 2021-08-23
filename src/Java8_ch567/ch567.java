@@ -124,6 +124,9 @@ class ch7 {
         //  宣告變數  編譯時轉 public final 為常數型態  要賦值
         //  介面是執行時期的動態查詢  效率相對慢  和類別不同  大量使用時  要觀察效率有沒有影響
         //  介面 extends 介面  也是繼承
+        //  interface 可以 new
+        //  https://stackoverflow.com/questions/9157784/java-interface-with-new-keyword-how-is-that-possible
+        //  In the code, you're not creating an instance of the interface. Rather, the code defines an anonymous class that implements the interface, and instantiates that class.
 
         //  多型
         //  用抽象類別實作多型  同方法子類實作不同  表現不同

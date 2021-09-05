@@ -6,11 +6,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.nio.Buffer;
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
 import java.awt.*;
+import java.util.Date;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class ch14_17 {
 
@@ -376,8 +382,60 @@ class ch16 {
 
         //  Lambda 也可以用在 Collections 走訪 排序 過濾
 
+        MyFuncInterface funcInterface = (i) -> 100;
+        ArrayList<String> ls = new ArrayList<>(){};
+        ls.add("a");
+        ls.add("b");
+        ls.add("c");
+        filter(ls, new CPredicate());
+
+
+
     }
 
+
+    public static void filter(ArrayList<String> ls, Predicate<String> predicate){
+        for (int i = 0; i<ls.size(); i++){
+            if(predicate.test(ls.get(i))){
+                ls.remove(i);
+                i--;
+            }
+        }
+    }
+}
+
+@FunctionalInterface
+interface MyFuncInterface{
+    int getInt(int x);
+}
+
+class CPredicate implements Predicate<String>
+{
+    @Override
+    public boolean test(String o) {
+        return o != null && o.length() > 3;
+    }
+}
+class CConsumer implements Consumer<String>
+{
+    @Override
+    public void accept(String o) {
+        System.out.println(o);
+    }
+}
+class CFunction implements Function<String, String>
+{
+    @Override
+    public String apply(String o) {
+        return o != null && o.length() > 4 ? o.substring(1) : null;
+    }
+}
+class CSupplier implements Supplier<String>
+{
+    @Override
+    public String get() {
+        return LocalDateTime.now().toString();
+    }
 }
 
 

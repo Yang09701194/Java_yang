@@ -388,6 +388,7 @@ class ch16 {
         ls.add("b");
         ls.add("c");
         filter(ls, new CPredicate());
+        filter(ls, s -> s != null && s.length() > 3);
 
 
 

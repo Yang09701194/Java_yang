@@ -16,9 +16,18 @@ public class ch567 {
     }
 }
 
-class ch5 {
-    public void content() {
+interface ABC {
 
+}
+
+abstract class BB implements  ABC{
+
+}
+
+class ch5 {
+
+
+    public void content() {
         //  java C#  method   c c++ function
         //  [修柿子] [static] <傳回值型別> <method 名稱> ([引述串列]) [throws <例外名聲>]
         //  {

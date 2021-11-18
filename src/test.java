@@ -5,14 +5,61 @@ import Java8_ch14_17.*;
 import test123.*;
 import DS.*;
 import Java8_ch1234.*;
-
+import java.time.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+
+interface T{
+
+}
+class TT implements  T{
+    TT(){
+        this(1);
+    }
+    TT(int i){
+    }
+
+    public void k() throws IOException{
+
+        try {
+            throw  new RuntimeException();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int i;
+    private void set(){
+    }
+}
+class TTT extends  TT{
+    TTT(){
+        this(1);
+    }
+    TTT(int i){
+
+    }
+
+ private void t(){
+     set();
+ }
+    protected void set(){
+    }
+}
+
+
+
 
 public class test {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new char[]{'1', '2'});
+        var d = LocalDate.parse("2016-05-05");
+        var v = d.format(DateTimeFormatter.ISO_DATE_TIME);
+
 
         ch14_17.content();
         //ch11_13.content();

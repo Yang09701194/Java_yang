@@ -22,7 +22,7 @@ class DataLoader{
         this.coffeeRepository = coffeeRepository;
     }
 
-    //@PostConstruct
+    @PostConstruct
     void loadData(){
         coffeeRepository.saveAll(List.of(new Coffee("Cereza"), new Coffee("Ganador"), new Coffee("Lareno"),new Coffee("Tres Pontas")));
     }

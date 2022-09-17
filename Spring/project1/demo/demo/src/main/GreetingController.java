@@ -1,7 +1,8 @@
-package com.example.coffee;
+package com.example.app;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,41 +57,18 @@ class Greeting{
 }
 
 
-
-class Droid {
-
-    public String id, description;
-
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return id;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-}
-
-
 @RestController
 @RequestMapping("/droid")
 class DroidController
 {
-    private final Droid droid;
+    private final com.example.app.Droid droid;
 
-    public DroidController(Droid droid) {
+    public DroidController(com.example.app.Droid droid) {
         this.droid = droid;
     }
 
     @GetMapping
-    Droid getDroid(){
+    com.example.app.Droid getDroid(){
         return droid;
     }
 

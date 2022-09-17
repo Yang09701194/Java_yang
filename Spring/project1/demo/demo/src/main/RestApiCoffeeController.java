@@ -1,5 +1,7 @@
-package com.example.coffee;
+package com.example.app;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +36,8 @@ class DataLoader{
 @CrossOrigin(origins = "localhost:8080")
 @RequestMapping("/coffees")
 public class RestApiCoffeeController {
+
+
     //private List<Coffee> coffees = new ArrayList<>();
     private final CoffeeRepository coffeeRepository;
 

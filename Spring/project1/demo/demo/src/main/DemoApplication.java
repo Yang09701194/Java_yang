@@ -1,5 +1,6 @@
-package com.example.coffee;
+package com.example.app;
 
+import main.plane.redis.Serialize;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -15,17 +16,22 @@ import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootApplication
-@ConfigurationPropertiesScan
+@ConfigurationPropertiesScan(basePackages = {"com.example.app", "main.plane.redis"})
 public class DemoApplication {
 
 	public static void main(String[] args) {
+
+		SpringApplication.run(Serialize.class, args);
 		SpringApplication.run(DemoApplication.class, args);
+
 	}
+
+
 
 	@Bean
 	@ConfigurationProperties(prefix="droid")
-	com.example.coffee.Droid createDroid(){
-		return new com.example.coffee.Droid();
+	com.example.app.Droid createDroid(){
+		return new com.example.app.Droid();
 	}
 
 }

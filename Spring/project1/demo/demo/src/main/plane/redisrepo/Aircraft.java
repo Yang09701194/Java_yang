@@ -1,4 +1,4 @@
-package main.plane.redis;
+package main.plane.redisrepo;
 
 import com.example.app.Droid;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import javax.persistence.Entity;
 import java.time.Instant;
@@ -19,7 +19,8 @@ import java.time.Instant;
 public class Aircraft {
 
     @Id
-    private long id;
+    public long id;
+
     private String callsign, squwak, reg, flightno, route, type, category;
     private int altitude, heading, speed;
 

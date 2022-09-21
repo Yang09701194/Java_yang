@@ -22,12 +22,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@SpringBootApplication(scanBasePackages={"com.example.app",/*"main.plane.redis",*/"main.plane.redisrepo"})
-@ConfigurationPropertiesScan(basePackages={"com.example.app",/*"main.plane.redis",*/"main.plane.redisrepo"})
-@ComponentScan(basePackages={"com.example.app",/*"main.plane.redis",*/"main.plane.redisrepo"})
-@EnableJpaRepositories(basePackages ={"com.example.app",/*"main.plane.redis",*/"main.plane.redisrepo"})
+@SpringBootApplication(scanBasePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo",*/"main.plane.jpa_mysql"})
+@ConfigurationPropertiesScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo",*/"main.plane.jpa_mysql"})
+@ComponentScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo",*/"main.plane.jpa_mysql"})
+@EnableJpaRepositories(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo",*/"main.plane.jpa_mysql"})
 @EnableAutoConfiguration
-@EntityScan(basePackages={"com.example.app",/*"main.plane.redis",*/"main.plane.redisrepo"})
+@EntityScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo",*/"main.plane.jpa_mysql"})
 public class DemoApplication {
 
 	public static void main(String[] args) {

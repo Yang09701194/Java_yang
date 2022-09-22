@@ -1,4 +1,4 @@
-package main.app.app
+package main.plane.mongodb
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class AppApplication
 
 fun main(args: Array<String>) {
-	runApplication<AppApplication>(*args)
+    runApplication<AppApplication>(*args)
 }

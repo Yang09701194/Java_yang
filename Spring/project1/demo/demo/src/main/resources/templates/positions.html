@@ -7,6 +7,18 @@
 </head>
 <body>
 
+<script type="text/javascript">
+window.onload = setupRefresh;
+
+function setupRefresh(){
+    setTimeout(refreshPage(), 5000);
+}
+function refreshPage(){
+    window.location = location.href;
+}
+
+</script>
+
     <div class="positionList" th:unless="${#lists.isEmpty(currentPositions)}"></div>
     <h2>Current Aircraft Positions</h2>
     <table>

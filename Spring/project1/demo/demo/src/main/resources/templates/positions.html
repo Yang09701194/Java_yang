@@ -11,7 +11,7 @@
 window.onload = setupRefresh;
 
 function setupRefresh(){
-    setTimeout(refreshPage(), 5000);
+    setTimeout("refreshPage();", 5000);
 }
 function refreshPage(){
     window.location = location.href;
@@ -19,7 +19,7 @@ function refreshPage(){
 
 </script>
 
-    <div class="positionList" th:unless="${#lists.isEmpty(currentPositions)}"></div>
+    <div class="positionList" th:unless="${#lists.isEmpty(currentPositions)}">
     <h2>Current Aircraft Positions</h2>
     <table>
         <thead>
@@ -58,7 +58,7 @@ function refreshPage(){
         </tr>
         </tbody>
     </table>
-
+    </div>
 
 
 

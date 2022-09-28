@@ -18,12 +18,15 @@ public class PositionController {
 
     @GetMapping("/aircraft")
     public String getCurrentAircraftPositions(Model model){
-        repository.deleteAll();
 
-        client.get().retrieve().bodyToFlux(Aircraft.class)
-                .filter(plane -> !plane.getReg().isEmpty())
-                .toStream().forEach(repository::save);
+        //webclient
+//        repository.deleteAll();
+//
+//        client.get().retrieve().bodyToFlux(Aircraft.class)
+//                .filter(plane -> !plane.getReg().isEmpty())
+//                .toStream().forEach(repository::save);
 
+        //rabbitMQ
         model.addAttribute("currentPositions", repository.findAll());
         return "positions";
     }

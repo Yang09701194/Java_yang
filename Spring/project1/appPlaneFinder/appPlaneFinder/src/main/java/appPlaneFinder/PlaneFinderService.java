@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,7 +26,8 @@ public class PlaneFinderService {
         om = new ObjectMapper();
     }
 
-    public Iterable<Aircraft> getAircraft() throws IOException {
+//    public Iterable<Aircraft> getAircraft() throws IOException {
+    public Flux<Aircraft> getAircraft() throws IOException {
         List<Aircraft> positions = new ArrayList<>();
 
         JsonNode aircraftNodes = null;
@@ -58,7 +60,8 @@ public class PlaneFinderService {
         }
     }
 
-    private Iterable<Aircraft> saveSamplePositions() {
+//    private Iterable<Aircraft> saveSamplePositions() {
+    private Flux<Aircraft> saveSamplePositions() {
         repo.deleteAll();
 
         // Spring Airlines flight 001 en route, flying STL to SFO, at 30000' currently over Kansas City

@@ -27,7 +27,7 @@ public class PlaneFinderService {
     }
 
 //    public Iterable<Aircraft> getAircraft() throws IOException {
-    public Flux<Aircraft> getAircraft() throws IOException {
+    public Flux<Aircraft> getAircraft() {
         List<Aircraft> positions = new ArrayList<>();
 
         JsonNode aircraftNodes = null;

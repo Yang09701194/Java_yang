@@ -22,7 +22,7 @@ public class PositionReporter {
         return ()->{
             try {
                 return service.getAircraft();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             //return List.of();

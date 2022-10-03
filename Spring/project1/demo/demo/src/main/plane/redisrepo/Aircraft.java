@@ -6,19 +6,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-//import javax.persistence.Id;
-//import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import javax.persistence.Entity;
 import java.time.Instant;
 
-//@Entity
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Aircraft {
 
-//    @Id
-//    public long id;
+    @Id
+    public long id;
 
     private String callsign, squwak, reg, flightno, route, type, category;
     private int altitude, heading, speed;

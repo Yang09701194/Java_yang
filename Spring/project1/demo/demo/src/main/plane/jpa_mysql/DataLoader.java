@@ -1,4 +1,4 @@
-package main.plane.jpa_mysql;
+package plane.jpa_mysql;
 
 import lombok.AllArgsConstructor;
 

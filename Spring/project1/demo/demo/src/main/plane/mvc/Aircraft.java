@@ -1,4 +1,4 @@
-package main.plane.mvc;
+package plane.mvc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

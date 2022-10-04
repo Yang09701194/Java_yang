@@ -2,7 +2,6 @@ package com.example.app;
 
 //import main.plane.redis.Serialize;
 
-import main.plane.redisrepo.App;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,7 +21,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-	@SpringBootApplication(scanBasePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql",*/"main.plane.mvc"})
+@SpringBootApplication(scanBasePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql",*/"main.plane.mvc"})
 @ConfigurationPropertiesScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql",*/"main.plane.mvc"})
 @ComponentScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql",*/"main.plane.mvc"})
 @EnableJpaRepositories(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql",*/"main.plane.mvc"})

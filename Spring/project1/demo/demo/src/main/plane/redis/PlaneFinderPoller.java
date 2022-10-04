@@ -1,4 +1,4 @@
-package main.plane.redis;
+package plane.redis;
 
 
 import org.springframework.data.redis.connection.RedisConnectionFactory;

@@ -1,4 +1,4 @@
-package main.plane.redisrepo;
+package plane.redisrepo;
 
 
 public class App {

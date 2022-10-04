@@ -1,4 +1,4 @@
-package main.plane.redisrepo;
+package plane.redisrepo;
 
 import com.example.app.Droid;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

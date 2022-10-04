@@ -1,4 +1,4 @@
-package main.plane.redisrepo;
+package plane.redisrepo;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

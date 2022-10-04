@@ -1,4 +1,4 @@
-package main.plane.mvc;
+package plane.mvc;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

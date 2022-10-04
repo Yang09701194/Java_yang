@@ -1,4 +1,4 @@
-package main.plane.mvc;
+package plane.mvc;
 
 
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 
 @AllArgsConstructor
 @Configuration
-public class PositoinRetriever {
+public class PositionRetriever {
     private final AircraftRepository repository;
     private final WebSocketHandler handler;
 

@@ -1,4 +1,4 @@
-package main.plane.redis;
+package plane.redis;
 
 import com.example.app.Droid;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

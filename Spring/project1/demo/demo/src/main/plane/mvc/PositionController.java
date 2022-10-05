@@ -16,8 +16,11 @@ import java.util.List;
 @Controller
 public class PositionController {
 
+//    @NonNull
+//    private final AircraftRepository repository;
     @NonNull
-    private final AircraftRepository repository;
+    private final PositionRetriever retriever;
+
     private WebClient client = WebClient.create("http://localhost:7634/aircraft");
 
     @GetMapping("/aircraft")
@@ -31,7 +34,7 @@ public class PositionController {
 //                .toStream().forEach(repository::save);
 
         //rabbitMQ
-        model.addAttribute("currentPositions", repository.findAll());
+        model.addAttribute("currentPositions", retriever.getRepository().findAll());
         return "positions";
     }
 
@@ -61,13 +64,16 @@ public class PositionController {
 //            repository.saveAll(List.of(ac1, ac2));
 
             //webclient
-            repository.deleteAll();
+//            retriever.getRepository().deleteAll();
+//
+//            client.get().retrieve().bodyToFlux(Aircraft.class)
+//                    .filter(plane -> !plane.getReg().isEmpty())
+//                    .toStream().forEach(retriever.getRepository()::save);
+//
+//            return retriever.getRepository().findAll();
+//
 
-            client.get().retrieve().bodyToFlux(Aircraft.class)
-                    .filter(plane -> !plane.getReg().isEmpty())
-                    .toStream().forEach(repository::save);
-
-            return repository.findAll();
+            return retriever.getAircraftPositions();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

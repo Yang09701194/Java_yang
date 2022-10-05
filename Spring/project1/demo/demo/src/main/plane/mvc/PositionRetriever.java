@@ -2,12 +2,15 @@ package plane.mvc;
 
 
 import lombok.AllArgsConstructor;
+import lombok.NonNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -16,6 +19,8 @@ import java.util.function.Consumer;
 public class PositionRetriever {
     private final AircraftRepository repository;
     private final WebSocketHandler handler;
+
+    private WebClient client = WebClient.create("http://localhost:7634/aircraft");
 
     @Bean
     Consumer<List<Aircraft>> retrieveAircraftPositions() {
@@ -30,19 +35,35 @@ public class PositionRetriever {
         };
     }
 
-    private void sendPositions(){
-        if(repository.count() > 0){
-            for(WebSocketSession sessionInList: handler.getSessionList()){
+    public AircraftRepository getRepository() {
+        return repository;
+    }
+
+    private void sendPositions() {
+        if (repository.count() > 0) {
+            for (WebSocketSession sessionInList : handler.getSessionList()) {
                 try {
                     sessionInList.sendMessage(
                             new TextMessage(repository.findAll().toString())
                     );
-                } catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
+    public Iterable<Aircraft> getAircraftPositions() {
+        //webclient
+        repository.deleteAll();
+
+        client.get().retrieve().bodyToFlux(Aircraft.class)
+                .filter(plane -> !plane.getReg().isEmpty())
+                .toStream().forEach(repository::save);
+
+        return repository.findAll();
+
+
+    }
 
 }

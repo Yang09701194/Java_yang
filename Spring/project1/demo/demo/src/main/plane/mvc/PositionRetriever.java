@@ -3,6 +3,7 @@ package plane.mvc;
 
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -14,10 +15,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Configuration
 public class PositionRetriever {
+
+    @NonNull
     private final AircraftRepository repository;
+    @NonNull
     private final WebSocketHandler handler;
 
     private WebClient client = WebClient.create("http://localhost:7634/aircraft");

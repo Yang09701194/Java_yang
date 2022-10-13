@@ -24,7 +24,9 @@ public class PositionRetriever {
     @NonNull
     private final WebSocketHandler handler;
 
-    private WebClient client = WebClient.create("http://localhost:7634/aircraft");
+//    private WebClient client = WebClient.create("http://localhost:7634/aircraft");
+    @NonNull
+    private WebClient client;
 
     @Bean
     Consumer<List<Aircraft>> retrieveAircraftPositions() {
@@ -57,11 +59,11 @@ public class PositionRetriever {
         }
     }
 
-    public Iterable<Aircraft> getAircraftPositions() {
+    public Iterable<Aircraft> getAircraftPositions(String endpoint) {
         //webclient
         repository.deleteAll();
 
-        client.get().retrieve().bodyToFlux(Aircraft.class)
+        client.get().uri(null != endpoint ? endpoint : "").retrieve().bodyToFlux(Aircraft.class)
                 .filter(plane -> !plane.getReg().isEmpty())
                 .toStream().forEach(repository::save);
 

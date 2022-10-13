@@ -59,7 +59,7 @@ class PositionControllerTest {
                 true, false,
                 Instant.now(), Instant.now(), Instant.now());
 
-        Mockito.when(retriever.getAircraftPositions())
+        Mockito.when(retriever.getAircraftPositions("aircraft"))
                 .thenReturn(List.of(ac1, ac2));
         Mockito.when(repository.findAll()).thenReturn(List.of(ac1, ac2));
     }

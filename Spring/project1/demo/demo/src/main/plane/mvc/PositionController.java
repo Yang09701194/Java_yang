@@ -73,19 +73,7 @@ public class PositionController {
 //            return retriever.getRepository().findAll();
 //
 
-            return retriever.getAircraftPositions("aircraft");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    @ResponseBody
-    @GetMapping("/aircraftapi/admin")
-    public Iterable<Aircraft> getCurrentAircraftPositionsApiAdmin() {
-        System.out.println("api-start");
-        try {
-            return retriever.getAircraftPositions(" aircraftadmin");
+            return retriever.getAircraftPositions();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

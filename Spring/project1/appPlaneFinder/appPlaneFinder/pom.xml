@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>appPlaneFinder</groupId>
-	<artifactId>appPlaneFinder</artifactId>
+	<artifactId>app-plane-finder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>appPlaneFinder</name>
 	<description>appPlaneFinder</description>
@@ -87,6 +87,18 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+
+					<image>
+						<name>yang09701194/${project.artifactId}</name>
+					</image>
 				</configuration>
 			</plugin>
 		</plugins>

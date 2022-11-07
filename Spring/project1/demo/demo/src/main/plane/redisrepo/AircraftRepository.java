@@ -1,4 +1,4 @@
-package plane.redisrepo;
+package main.plane.redisrepo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.repository.CrudRepository;

@@ -1,4 +1,4 @@
-package plane.mvc;
+package main.plane.mvc;
 
 import org.springframework.data.repository.CrudRepository;
 

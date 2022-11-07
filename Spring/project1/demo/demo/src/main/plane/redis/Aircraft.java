@@ -1,4 +1,4 @@
-package plane.redis;
+package main.plane.redis;
 
 import com.example.app.Droid;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -8,10 +8,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
+//import javax.persistence.Entity;
 import java.time.Instant;
 
-@Entity
+//@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

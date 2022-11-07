@@ -1,25 +1,21 @@
-package main.plane.jpa_mysql;
-
+package main.plane.r2dbc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
 import java.time.Instant;
 
-//@Entity
+@Document
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Aircraft {
-//    @Id
-//    @GeneratedValue
+    @Id
     private Long id;
-
     private String callsign, squawk, reg, flightno, route, type, category;
 
     private int altitude, heading, speed;

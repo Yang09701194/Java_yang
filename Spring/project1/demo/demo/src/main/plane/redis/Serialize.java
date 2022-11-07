@@ -1,4 +1,4 @@
-package plane.redis;
+package main.plane.redis;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;

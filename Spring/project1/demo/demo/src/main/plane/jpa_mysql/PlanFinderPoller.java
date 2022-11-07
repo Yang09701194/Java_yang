@@ -1,4 +1,4 @@
-package plane.jpa_mysql;
+package main.plane.jpa_mysql;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,8 @@
-package com.example.app;
+package com.example.app2;
 
-//import plane.redis.Serialize;
+//import main.plane.redis.Serialize;
 
+import main.plane.redisrepo.App;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +11,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+//import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +23,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@SpringBootApplication(scanBasePackages={/*"com.example.app","plane.redis","plane.redisrepo","plane.jpa_mysql",*/"plane.mvc"})
-@ConfigurationPropertiesScan(basePackages={/*"com.example.app","plane.redis","plane.redisrepo","plane.jpa_mysql",*/"plane.mvc"})
-@ComponentScan(basePackages={/*"com.example.app","plane.redis","plane.redisrepo","plane.jpa_mysql",*/"plane.mvc"})
-@EnableJpaRepositories(basePackages={/*"com.example.app","plane.redis","plane.redisrepo","plane.jpa_mysql",*/"plane.mvc"})
+@SpringBootApplication(scanBasePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql","main.plane.mvc",*/"main.plane.r2dbc"})
+@ConfigurationPropertiesScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql","main.plane.mvc",*/"main.plane.r2dbc"})
+@ComponentScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql","main.plane.mvc",*/"main.plane.r2dbc"})
+//@EnableJpaRepositories(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql","main.plane.mvc",*/"main.plane.r2dbc"})
+@EnableReactiveMongoRepositories(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql","main.plane.mvc",*/"main.plane.r2dbc"})
 @EnableAutoConfiguration
-@EntityScan(basePackages={/*"com.example.app","plane.redis","plane.redisrepo","plane.jpa_mysql",*/"plane.mvc"})
+@EntityScan(basePackages={/*"com.example.app","main.plane.redis","main.plane.redisrepo","main.plane.jpa_mysql","main.plane.mvc",*/"main.plane.r2dbc"})
 public class DemoApplication {
 
 	public static void main(String[] args) {

@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -109,9 +109,9 @@ public class RestApiCoffeeController {
 
 interface CoffeeRepository extends CrudRepository<Coffee, String> {};
 
-@Entity
+//@Entity
 class Coffee{
-    @Id
+//    @Id
     private String id;
     private String name;
 
